@@ -1,0 +1,13 @@
+10/23/2023, 10pm-11pm
+
+* Created 3 very basic layout designs of my webapp using microsoft paint. One for each different width size.
+* Created a basic step by step plan to approach my webapp.
+
+11/1/2023 
+* Started learning Figma watching various YT tutorials.
+
+11/6/2023
+* Started Creating a Figma Wireframe for my webapp.
+* Finished my new wireframes using Figma.
+* Deleted all files in the repo I had started to start fresh with new
+  Figma wireframe designs.
