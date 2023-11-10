@@ -3,6 +3,7 @@
     <head>
         <title>Manny's Mail</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <div class="container">
@@ -42,9 +43,16 @@
 
 
             <!-- Row for Mail Content with single col. -->
-            <div class="row" id="home-mailbox">
-                <div class="col d-flex">
-
+            <div class="row">
+                <div class="col-12" id="inbox">
+                  <div class="message-box">
+                    <div class="message-preview d-flex" style="justify-content: space-between;">
+                      <p class="user">From: John</p>
+                      <p class="subject"><strong>Subject:</strong> Let's work on improving that design!</p>
+                      <p class="timestamp">Today, 8:53pm</p>
+                    </div>
+                    </div>
+                  </div>
                 </div>
             </div>
 
