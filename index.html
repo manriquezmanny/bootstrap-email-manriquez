@@ -6,13 +6,14 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <div class="container">
+      <div class="container">
             <!-- Row for NavBar with single col -->
             <div class="row">
                 <div class="col">
-                    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar" data-bs-theme="dark">
                         <div class="container-fluid">
-                          <a class="navbar-brand" href="#">Home</a>
+                          <a class="navbar-brand" href="#">Inbox</a>
+                          <button class="btn btn-outline-warning ms-auto" id="compose-button">Compose</button>
                           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                           </button>
@@ -41,29 +42,94 @@
                 </div>
             </div>
 
+            <!-- Row for Mail Content col-12 for each message. -->
+            <div class="row d-flex" id="mailbox-area">
 
-            <!-- Row for Mail Content with single col. -->
-            <div class="row">
-                <div class="col-12" id="inbox">
-                  <div class="message-box">
+                <div class="col-12 message-box">
                     <div class="message-preview d-flex" style="justify-content: space-between;">
                       <p class="user">From: John</p>
-                      <p class="subject"><strong>Subject:</strong> Let's work on improving that design!</p>
+                      <p class="subject"><strong>Subject:</strong> Let's improve on that design!</p>
                       <p class="timestamp">Today, 8:53pm</p>
                     </div>
+  
+                    <div class="message-expansion" style="display:none;">
+                        <p class="message">Hey Manny,<br><br> let's work on making our email project amazing with some JavaScript event listeners.
+                          I figured we can make our message boxes listen for a click and expand when toggled to show the full message,
+                          a reply button, and a delete button. We can make the mouse cursor show a pointer finger to indicate that they are clickable
+                          using css!<br><br>-John
+                        </p>
+                        <button class="btn btn-primary" style="align-self:flex-end; margin-right:8px;">Reply</button>
+                        <button class="btn btn-danger" style="align-self:flex-end;">Delete</button>
                     </div>
+                </div>
+
+                <div class="col-12 message-box">
+                    <div class="message-preview d-flex" style="justify-content: space-between;">
+                      <p class="user">From: Alice</p>
+                      <p class="subject"><strong>Subject:</strong> Are you busy after work?</p>
+                      <p class="timestamp">Today, 4:15pm</p>
+                    </div>
+                    <div class="message-expansion" style="display:none;">
+                        <p class="message">Hey Manny,<br><br> I was wondering if you wanted to grab some food after work?
+                          I've been extremely stressed with the sudden influx of clients lately and I could use some good food!
+                          I was thinking we could go to a steakhouse, let me know if you can make it.<br><br>-Alice
+                        </p>
+                        <button id="reply-button" class="btn btn-primary" style="align-self:flex-end; margin-right:8px;">Reply</button>
+                        <button id="delete-button" class="btn btn-danger" style="align-self:flex-end;">Delete</button>
+                    </div>
+                </div>
+
+                <div class="col-12 message-box">
+                  <div class="message-preview d-flex" style="justify-content: space-between;">
+                    <p class="user">From: Will</p>
+                    <p class="subject"><strong>Subject:</strong> Arcade Time!</p>
+                    <p class="timestamp">Today, 3:45pm</p>
                   </div>
+                  <div class="message-expansion" style="display:none;">
+                      <p class="message">Yo,<br><br> Lets go hit up the arcade tomorrow at 6! They have
+                        some really cool new machines and I bet that I can get the high score on all of them!
+                        plus they serve pizza and i've been craving it! You better not flake on me!<br><br>-Will
+                      </p>
+                      <button id="reply-button" class="btn btn-primary" style="align-self:flex-end; margin-right:8px;">Reply</button>
+                      <button id="delete-button" class="btn btn-danger" style="align-self:flex-end;">Delete</button>
+                  </div>
+              </div>
+
+              <div class="col-12 message-box">
+                <div class="message-preview d-flex" style="justify-content: space-between;">
+                  <p class="user">From: Mason</p>
+                  <p class="subject"><strong>Subject:</strong> Club Meeting</p>
+                  <p class="timestamp">Today, 2:14pm</p>
+                </div>
+                <div class="message-expansion" style="display:none;">
+                    <p class="message">Dear Manny,<br><br> Can you make it to our meeting on friday? We will be
+                      discussing possible fundraising opportunities. We're getting close to reaching our goal of
+                      10 trillion dollars for world domination!<br><br>-Mason
+                    </p>
+                    <button id="reply-button" class="btn btn-primary" style="align-self:flex-end; margin-right:8px;">Reply</button>
+                    <button id="delete-button" class="btn btn-danger" style="align-self:flex-end;">Delete</button>
                 </div>
             </div>
 
-
-            <!-- Row for Fixed Compose Button at the bottom right of viewport. Also one single col. -->
-            <div class="row">
-                <div class="col d-flex">
-
-                </div>
+            <div class="col-12 message-box">
+              <div class="message-preview d-flex" style="justify-content: space-between;">
+                <p class="user">From: Griff</p>
+                <p class="subject"><strong>Subject:</strong> Code Review</p>
+                <p class="timestamp">Today, 12:45pm</p>
+              </div>
+              <div class="message-expansion" style="display:none;">
+                  <p class="message">Hey Manny,<br><br> Make sure you can make it to today's code review. We could
+                  definitely use your input on certain aspects of the program's design. We want to make sure that it
+                  remains as scaleable as possible so we can keep our jobs for years to come!<br><br>-
+                  </p>
+                  <button id="reply-button" class="btn btn-primary" style="align-self:flex-end; margin-right:8px;">Reply</button>
+                  <button id="delete-button" class="btn btn-danger" style="align-self:flex-end;">Delete</button>
+              </div>
             </div>
+          </div>
         </div>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="app.js"></script>
     </body>
 </html>
