@@ -7,127 +7,303 @@
     </head>
     <body>
       <div class="container">
-            <!-- Row for NavBar with single col -->
-            <div class="row">
-                <div class="col">
-                    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar" data-bs-theme="dark">
-                        <div class="container-fluid">
-                          <a class="navbar-brand" href="#">Inbox</a>
-                          <button class="btn btn-outline-warning ms-auto" id="compose-button">Compose</button>
-                          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                          </button>
-                          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                              <li class="nav-item">
-                                <a class="nav-link active" href="#">Sent</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link active" href="#">Spam</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link active" href="#">Deleted</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link active" href="#">Log In</a>
-                              </li>
-                            </ul>
-                            <form class="d-flex" role="search">
-                              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                              <button class="btn btn-outline-light" type="submit">Search</button>
-                            </form>
-                          </div>
-                        </div>
-                      </nav>
+        <!-- Row for NavBar with single col -->
+        <div class="row">
+          <div class="col">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar" data-bs-theme="dark">
+              <div class="container-fluid">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="navbar-brand text-white" id="current-mail" href="#">Inbox</li>
+                </ul>
+                <button class="btn btn-outline-warning ms-auto" id="compose-button">Compose</button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#">Inbox</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#">Sent</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#">Spam</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#">Deleted</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#">Log In</a>
+                    </li>
+                  </ul>
+                  <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                  </form>
                 </div>
-            </div>
-
-            <!-- Row for Mail Content col-12 for each message. -->
-            <div class="row d-flex" id="mailbox-area">
-
-                <div class="col-12 message-box">
-                    <div class="message-preview d-flex" style="justify-content: space-between;">
-                      <p class="user">From: John</p>
-                      <p class="subject"><strong>Subject:</strong> Let's improve on that design!</p>
-                      <p class="timestamp">Today, 8:53pm</p>
-                    </div>
-  
-                    <div class="message-expansion" style="display:none;">
-                        <p class="message">Hey Manny,<br><br> let's work on making our email project amazing with some JavaScript event listeners.
-                          I figured we can make our message boxes listen for a click and expand when toggled to show the full message,
-                          a reply button, and a delete button. We can make the mouse cursor show a pointer finger to indicate that they are clickable
-                          using css!<br><br>-John
-                        </p>
-                        <button class="btn btn-primary" style="align-self:flex-end; margin-right:8px;">Reply</button>
-                        <button class="btn btn-danger" style="align-self:flex-end;">Delete</button>
-                    </div>
-                </div>
-
-                <div class="col-12 message-box">
-                    <div class="message-preview d-flex" style="justify-content: space-between;">
-                      <p class="user">From: Alice</p>
-                      <p class="subject"><strong>Subject:</strong> Are you busy after work?</p>
-                      <p class="timestamp">Today, 4:15pm</p>
-                    </div>
-                    <div class="message-expansion" style="display:none;">
-                        <p class="message">Hey Manny,<br><br> I was wondering if you wanted to grab some food after work?
-                          I've been extremely stressed with the sudden influx of clients lately and I could use some good food!
-                          I was thinking we could go to a steakhouse, let me know if you can make it.<br><br>-Alice
-                        </p>
-                        <button id="reply-button" class="btn btn-primary" style="align-self:flex-end; margin-right:8px;">Reply</button>
-                        <button id="delete-button" class="btn btn-danger" style="align-self:flex-end;">Delete</button>
-                    </div>
-                </div>
-
-                <div class="col-12 message-box">
-                  <div class="message-preview d-flex" style="justify-content: space-between;">
-                    <p class="user">From: Will</p>
-                    <p class="subject"><strong>Subject:</strong> Arcade Time!</p>
-                    <p class="timestamp">Today, 3:45pm</p>
-                  </div>
-                  <div class="message-expansion" style="display:none;">
-                      <p class="message">Yo,<br><br> Lets go hit up the arcade tomorrow at 6! They have
-                        some really cool new machines and I bet that I can get the high score on all of them!
-                        plus they serve pizza and i've been craving it! You better not flake on me!<br><br>-Will
-                      </p>
-                      <button id="reply-button" class="btn btn-primary" style="align-self:flex-end; margin-right:8px;">Reply</button>
-                      <button id="delete-button" class="btn btn-danger" style="align-self:flex-end;">Delete</button>
-                  </div>
               </div>
-
-              <div class="col-12 message-box">
-                <div class="message-preview d-flex" style="justify-content: space-between;">
-                  <p class="user">From: Mason</p>
-                  <p class="subject"><strong>Subject:</strong> Club Meeting</p>
-                  <p class="timestamp">Today, 2:14pm</p>
-                </div>
-                <div class="message-expansion" style="display:none;">
-                    <p class="message">Dear Manny,<br><br> Can you make it to our meeting on friday? We will be
-                      discussing possible fundraising opportunities. We're getting close to reaching our goal of
-                      10 trillion dollars for world domination!<br><br>-Mason
-                    </p>
-                    <button id="reply-button" class="btn btn-primary" style="align-self:flex-end; margin-right:8px;">Reply</button>
-                    <button id="delete-button" class="btn btn-danger" style="align-self:flex-end;">Delete</button>
-                </div>
-            </div>
-
-            <div class="col-12 message-box">
-              <div class="message-preview d-flex" style="justify-content: space-between;">
-                <p class="user">From: Griff</p>
-                <p class="subject"><strong>Subject:</strong> Code Review</p>
-                <p class="timestamp">Today, 12:45pm</p>
-              </div>
-              <div class="message-expansion" style="display:none;">
-                  <p class="message">Hey Manny,<br><br> Make sure you can make it to today's code review. We could
-                  definitely use your input on certain aspects of the program's design. We want to make sure that it
-                  remains as scaleable as possible so we can keep our jobs for years to come!<br><br>-
-                  </p>
-                  <button id="reply-button" class="btn btn-primary" style="align-self:flex-end; margin-right:8px;">Reply</button>
-                  <button id="delete-button" class="btn btn-danger" style="align-self:flex-end;">Delete</button>
-              </div>
-            </div>
+            </nav>
           </div>
         </div>
+
+        <!-- Row for Inbox Content col-12 for each message. -->
+        <div class="row d-flex mailbox-area" id="inbox-mail">
+
+          <div class="col-12 message-box">
+            <div class="message-preview d-flex" style="justify-content: space-between;">
+              <p class="user">From: John</p>
+              <p class="subject"><strong>Subject:</strong> Let's improve on that design!</p>
+              <p class="timestamp">Today, 8:53pm</p>
+            </div>
+  
+            <div class="message-expansion" style="display:none;">
+              <p class="message">Hey Manny,<br><br> let's work on making our email project amazing with some JavaScript event listeners.
+                I figured we can make our message boxes listen for a click and expand when toggled to show the full message,
+                a reply button, and a delete button. We can make the mouse cursor show a pointer finger to indicate that they are clickable
+                using css!<br><br>-John
+              </p>
+              <button class="btn btn-primary" style="align-self:flex-end; margin-right:8px;">Reply</button>
+              <button class="btn btn-danger" style="align-self:flex-end;">Delete</button>
+            </div>
+          </div>
+
+          <div class="col-12 message-box">
+            <div class="message-preview d-flex" style="justify-content: space-between;">
+              <p class="user">From: Alice</p>
+              <p class="subject"><strong>Subject:</strong> Are you busy after work?</p>
+              <p class="timestamp">Today, 4:15pm</p>
+            </div>
+            <div class="message-expansion" style="display:none;">
+              <p class="message">Hey Manny,<br><br> I was wondering if you wanted to grab some food after work?
+                I've been extremely stressed with the sudden influx of clients lately and I could use some good food!
+                I was thinking we could go to a steakhouse, let me know if you can make it.<br><br>-Alice
+              </p>
+              <button class="btn btn-primary" style="align-self:flex-end; margin-right:8px;">Reply</button>
+              <button class="btn btn-danger" style="align-self:flex-end;">Delete</button>
+            </div>
+          </div>
+
+          <div class="col-12 message-box">
+            <div class="message-preview d-flex" style="justify-content: space-between;">
+              <p class="user">From: Will</p>
+              <p class="subject"><strong>Subject:</strong> Arcade Time!</p>
+              <p class="timestamp">Today, 3:45pm</p>
+            </div>
+            <div class="message-expansion" style="display:none;">
+              <p class="message">Yo,<br><br> Lets go hit up the arcade tomorrow at 6! They have
+                some really cool new machines and I bet that I can get the high score on all of them!
+                plus they serve pizza and i've been craving it! You better not flake on me!<br><br>-Will
+              </p>
+              <button class="btn btn-primary" style="align-self:flex-end; margin-right:8px;">Reply</button>
+              <button class="btn btn-danger" style="align-self:flex-end;">Delete</button>
+            </div>
+          </div>
+
+          <div class="col-12 message-box">
+            <div class="message-preview d-flex" style="justify-content: space-between;">
+              <p class="user">From: Mason</p>
+              <p class="subject"><strong>Subject:</strong> Club Meeting</p>
+              <p class="timestamp">Today, 2:14pm</p>
+            </div>
+            <div class="message-expansion" style="display:none;">
+              <p class="message">Dear Manny,<br><br> Can you make it to our meeting on friday? We will be
+                discussing possible fundraising opportunities. We're getting close to reaching our goal of
+                10 trillion dollars for world domination!<br><br>-Mason
+              </p>
+              <button class="btn btn-primary" style="align-self:flex-end; margin-right:8px;">Reply</button>
+              <button class="btn btn-danger" style="align-self:flex-end;">Delete</button>
+            </div>
+          </div>
+
+          <div class="col-12 message-box">
+            <div class="message-preview d-flex" style="justify-content: space-between;">
+              <p class="user">From: Griff</p>
+              <p class="subject"><strong>Subject:</strong> Code Review</p>
+              <p class="timestamp">Today, 12:45pm</p>
+            </div>
+            <div class="message-expansion" style="display:none;">
+              <p class="message">Hey Manny,<br><br> Make sure you can make it to today's code review. We could
+                definitely use your input on certain aspects of the program's design. We want to make sure that it
+                remains as scaleable as possible so we can keep our jobs for years to come!<br><br>-Griff
+              </p>
+                <button class="btn btn-primary" style="align-self:flex-end; margin-right:8px;">Reply</button>
+                <button class="btn btn-danger" style="align-self:flex-end;">Delete</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Row for Sent Content col-12 for each message. -->
+        <div class="row d-flex mailbox-area" id="sent-mail">
+
+          <div class="col-12 message-box">
+            <div class="message-preview d-flex" style="justify-content: space-between;">
+              <p class="user">To: John</p>
+              <p class="subject"><strong>Subject:</strong> Already improved that design!</p>
+              <p class="timestamp">Today, 8:55pm</p>
+            </div>
+  
+            <div class="message-expansion" style="display:none;">
+              <p class="message">Hey John,<br><br> Alice and I worked on the project last night and made
+                several improvements to the design alread. I'd like to hear what you think about the changes
+                we made as soon as possible. Give me a call tonight if you have the time!<br><br>-Manny
+              </p>
+              <button class="btn btn-danger" style="align-self:flex-end;">Delete</button>
+            </div>
+          </div>
+
+          <div class="col-12 message-box">
+            <div class="message-preview d-flex" style="justify-content: space-between;">
+              <p class="user">To: Alice</p>
+              <p class="subject"><strong>Subject:</strong> That food was amazing!</p>
+              <p class="timestamp">Today, 9:15pm</p>
+            </div>
+            <div class="message-expansion" style="display:none;">
+              <p class="message">Hey Alice,<br><br> That restaurant had the best food I've ever had! Let's do it
+                again sometime and invite the rest of the group to come along as well! Cheers to finishing a very
+                stressful project!<br><br>-Manny
+              </p>
+              <button id="delete-button" class="btn btn-danger" style="align-self:flex-end;">Delete</button>
+            </div>
+          </div>
+
+          <div class="col-12 message-box">
+            <div class="message-preview d-flex" style="justify-content: space-between;">
+              <p class="user">To: Will</p>
+              <p class="subject"><strong>Subject:</strong> Arcade Time!</p>
+              <p class="timestamp">Today, 3:53pm</p>
+            </div>
+            <div class="message-expansion" style="display:none;">
+              <p class="message">Hey Will,<br><br> Unfortunately I already have plans for tonight, but let's 
+                definitely go to the arcade another day! This week has been busy with all the new features
+                we're implementing on our project! We're basically finishing up now though.<br><br>-Manny
+              </p>
+              <button id="delete-button" class="btn btn-danger" style="align-self:flex-end;">Delete</button>
+            </div>
+          </div>
+
+          <div class="col-12 message-box">
+            <div class="message-preview d-flex" style="justify-content: space-between;">
+              <p class="user">To: Mason</p>
+              <p class="subject"><strong>Subject:</strong> Club Meeting</p>
+              <p class="timestamp">Today, 2:35pm</p>
+            </div>
+            <div class="message-expansion" style="display:none;">
+              <p class="message">Dear Mason,<br><br> Roger that Mason. I'll be there bright and early on Friday 
+                for the meeting! 10 trillion!? world domination!? haha you're funny!!<br><br>-Manny
+              </p>
+              <button id="delete-button" class="btn btn-danger" style="align-self:flex-end;">Delete</button>
+            </div>
+          </div>
+
+          <div class="col-12 message-box">
+            <div class="message-preview d-flex" style="justify-content: space-between;">
+              <p class="user">To: Griff</p>
+              <p class="subject"><strong>Subject:</strong> Code Review</p>
+              <p class="timestamp">Today, 1:30pm</p>
+            </div>
+            <div class="message-expansion" style="display:none;">
+              <p class="message">Hey Griff,<br><br> Thanks for helping us out today, we had  very productive
+                code review session. The whole team has a much better sense of direction and a clear plan to 
+                execute all the design requirements now.<br><br>-Manny
+              </p>
+                <button id="delete-button" class="btn btn-danger" style="align-self:flex-end;">Delete</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Row for Spam Content col-12 for each message. -->
+        <div class="row d-flex mailbox-area" id="spam-mail">
+
+          <div class="col-12 message-box">
+            <div class="message-preview d-flex" style="justify-content: space-between;">
+              <p class="user">From: Bob</p>
+              <p class="subject"><strong>Subject:</strong> You Qualify!</p>
+              <p class="timestamp">Today, 8:50pm</p>
+            </div>
+  
+            <div class="message-expansion" style="display:none;">
+              <p class="message">Hello!,<br><br> We've been trying to reach you regarding your car's extended
+                warranty! Please click on the link bellow and fill out the form. You can also call the number provided
+                and our highly qualified specialist will be ready to assist you. <br><br>-Manny
+              </p>
+              <button class="btn btn-primary" style="align-self:flex-end; margin-right:8px;">Reply</button>
+              <button class="btn btn-danger" style="align-self:flex-end;">Delete</button>
+            </div>
+          </div>
+
+          <div class="col-12 message-box">
+            <div class="message-preview d-flex" style="justify-content: space-between;">
+              <p class="user">From: Ikea</p>
+              <p class="subject"><strong>Subject:</strong> New amazing deals!</p>
+              <p class="timestamp">Today, 6:15pm</p>
+            </div>
+            <div class="message-expansion" style="display:none;">
+              <p class="message">Act Fast!<br><br> Check out our huge Fall Sale! So many items are up to 
+                80% off! Make sure to buy while supplies last!<br><br>-Ikea
+              </p>
+              <button class="btn btn-primary" style="align-self:flex-end; margin-right:8px;">Reply</button>
+              <button class="btn btn-danger" style="align-self:flex-end;">Delete</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Row for Deleted Content col-12 for each message. -->
+        <div class="row d-flex mailbox-area" id="deleted-mail">
+
+          <div class="col-12 message-box">
+            <div class="message-preview d-flex" style="justify-content: space-between;">
+              <p class="user">From: Sam</p>
+              <p class="subject"><strong>Subject: New Office</strong> We finished!</p>
+              <p class="timestamp">Today, 3:54pm</p>
+            </div>
+  
+            <div class="message-expansion" style="display:none;">
+              <p class="message">Hey Manny!<br><br> Just wanted to let you know that we finished renovating
+                the new office space for your team! We're ready to move you guys in whenever. Let us know what day
+                works for all of you! <br><br>-Sam
+              </p>
+              <button class="btn btn-primary" style="align-self:flex-end; margin-right:8px;">Restore</button>
+              <button class="btn btn-danger" style="align-self:flex-end;">Delete</button>
+            </div>
+          </div>
+
+          <div class="col-12 message-box">
+            <div class="message-preview d-flex" style="justify-content: space-between;">
+              <p class="user">From: Kyle</p>
+              <p class="subject"><strong>Subject: Coffee!!</strong> I brought Coffee!</p>
+              <p class="timestamp">Today, 6:15pm</p>
+            </div>
+            <div class="message-expansion" style="display:none;">
+              <p class="message">Manny!<br><br> I left coffe at the front entrance for everyone, Hopefully there's still
+                some left for you!<br><br>-Kyle
+              </p>
+              <button class="btn btn-primary" style="align-self:flex-end; margin-right:8px;">Restore</button>
+              <button class="btn btn-danger" style="align-self:flex-end;">Delete</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Row for Composing an Email -->
+        <div class="row d-flex mailbox-area" id="compose-mail">
+          <form>
+            <div class="col col-sm-6">
+              <input type="text" placeholder="Recipient" name="recipient" required>
+            </div>
+            <div class="col col-sm-6">
+              <input type="text" placeholder="Subject" name="subject" required>
+            </div>
+            <div class="col-12">
+              <input type="text" placeholder="Message" name="message">
+            </div>
+          </form>
+        </div>
+
+      </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script src="app.js"></script>

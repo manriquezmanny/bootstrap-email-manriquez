@@ -9,6 +9,5 @@ for (i = 0; i < message_Boxes.length; i++) {
         } else {
             this.children[1].style.display = "none";
         }
-        console.log("toggled");
     })
 }
