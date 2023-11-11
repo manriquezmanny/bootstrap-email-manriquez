@@ -16,3 +16,9 @@
 
 11/9/2023
 * Added Event listener functionality, and got a decent design going.
+
+11/11/2023
+* Added DOM manipulation.
+* Added Modal for replying to messages.
+* Added some innerHTML manipulation.
+* Finished project.

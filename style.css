@@ -56,6 +56,7 @@ p.message {
     margin-top:0px;
     font-weight:lighter;
     width:100%;
+    min-height:150px;
 }
 
 /* Hiding scrollbar on WebKit based browsers. */
