@@ -22,16 +22,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                      <a class="nav-link active" href="#">Inbox</a>
+                      <a class="nav-link active" href="javascript:toggleMail(inbox)">Inbox</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" href="#">Sent</a>
+                      <a class="nav-link active" href="javascript:toggleMail(sent)">Sent</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" href="#">Spam</a>
+                      <a class="nav-link active" href="javascript:toggleMail(spam)">Spam</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" href="#">Deleted</a>
+                      <a class="nav-link active" href="javascript:toggleMail(deleted)">Deleted</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link active" href="#">Log In</a>
@@ -48,7 +48,7 @@
         </div>
 
         <!-- Row for Inbox Content col-12 for each message. -->
-        <div class="row d-flex mailbox-area" id="inbox-mail">
+        <div class="row mailbox-area" id="inbox-mail" style="display:flex;">
 
           <div class="col-12 message-box">
             <div class="message-preview d-flex" style="justify-content: space-between;">
@@ -135,7 +135,7 @@
         </div>
 
         <!-- Row for Sent Content col-12 for each message. -->
-        <div class="row d-flex mailbox-area" id="sent-mail">
+        <div class="row mailbox-area" id="sent-mail" style="display:none;">
 
           <div class="col-12 message-box">
             <div class="message-preview d-flex" style="justify-content: space-between;">
@@ -215,7 +215,7 @@
         </div>
 
         <!-- Row for Spam Content col-12 for each message. -->
-        <div class="row d-flex mailbox-area" id="spam-mail">
+        <div class="row mailbox-area" id="spam-mail" style="display:none;">
 
           <div class="col-12 message-box">
             <div class="message-preview d-flex" style="justify-content: space-between;">
@@ -252,7 +252,7 @@
         </div>
 
         <!-- Row for Deleted Content col-12 for each message. -->
-        <div class="row d-flex mailbox-area" id="deleted-mail">
+        <div class="row mailbox-area" id="deleted-mail" style="display:none;">
 
           <div class="col-12 message-box">
             <div class="message-preview d-flex" style="justify-content: space-between;">
@@ -289,18 +289,22 @@
         </div>
 
         <!-- Row for Composing an Email -->
-        <div class="row d-flex mailbox-area" id="compose-mail">
-          <form>
-            <div class="col col-sm-6">
-              <input type="text" placeholder="Recipient" name="recipient" required>
-            </div>
-            <div class="col col-sm-6">
-              <input type="text" placeholder="Subject" name="subject" required>
-            </div>
-            <div class="col-12">
-              <input type="text" placeholder="Message" name="message">
-            </div>
-          </form>
+        <div class="row mailbox-area" id="compose-mail" style="display:none;">
+          <div class="col-12 col-xl-2 justify-content-center">
+            <h4>Compose Mail: </h4>
+          </div>
+          <div class="col-12 col-sm-6 col-xl-5 justify-content-start">
+            <input style="width:100%; margin-bottom:8px;" type="text" placeholder="Recipient" name="recipient" required>
+          </div>
+          <div class="col-12 col-sm-6 col-xl-5 justify-content-start">
+            <input style="width:100%; margin-bottom:8px;" type="text" placeholder="Subject" name="subject" required>
+          </div>
+          <div class="col-12 justify-content-start">
+            <textarea id="message-textarea">Message Here</textarea>
+          </div>
+          <div class="col-12 d-flex justify-content-end">
+            <button class="btn btn-warning">Send Message</button>
+          </div>
         </div>
 
       </div>

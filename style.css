@@ -46,6 +46,18 @@ p.message {
     margin-right:8px;
 }
 
+#compose-mail {
+    box-shadow: 0 0 10px gray;
+    padding:8px;
+    margin:8px;
+}
+
+#message-textarea {
+    margin-top:0px;
+    font-weight:lighter;
+    width:100%;
+}
+
 /* Hiding scrollbar on WebKit based browsers. */
 ::-webkit-scrollbar {
     width:0;
