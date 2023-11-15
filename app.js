@@ -1,4 +1,4 @@
-// Getting an array of all div's with class of message-expansion. Will loop over them to give all an event listener.
+// Getting an array of all div's with class of message-box. Will loop over them to give all an event listener.
 var message_Boxes = document.getElementsByClassName("message-box");
 
 // Getting divs for DOM manipulation.
@@ -10,6 +10,7 @@ var compose = document.getElementById("compose-mail");
 
 // Creating an empty array of mailboxes.
 mailboxes = [];
+
 // Populating mailboxes array.
 mailboxes.push(inbox);
 mailboxes.push(sent);
